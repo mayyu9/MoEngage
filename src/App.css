@@ -6,18 +6,6 @@
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -29,4 +17,86 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Modal css */
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.mainApp{
+  text-align: left;
+  min-width: 400px;
+  min-height: 600px;
+  border: 2px solid black;
+  margin: 50px 20px;
+}
+
+.App-header {
+  background-color: #F0F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  height:38px;
+}
+
+.campaginList{
+  margin: 1px 0px;
+  padding-top: 10px;
+  background-color: #F0FFFF;
+  height: 29px;
+  padding:10px 0px 0px 5px;
+}
+
+.createcamgainBtn{
+  padding: 6px;
+  background-color: blue;
+  color: white;
+  margin: auto;
+  display: inline-block;
 }
