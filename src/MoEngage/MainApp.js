@@ -10,6 +10,7 @@ import edit from './img/edit.png';
 import play from './img/play.png';
 import delete_icon from './img/delete.png';
 import pause from './img/pause.png';
+import currentTime from './helper';
 
 class MainApp extends React.Component{
 
@@ -35,11 +36,11 @@ class MainApp extends React.Component{
   }
 
   /*function for create button */
-  createCampaginBtn(id, name, time, event){
+  createCampaginBtn(id1, name1, time1, event){
     let campagainInfo = {
-      id:5,
-      name: 'campagin 5- test',
-      time: '3:30 pm'
+      id:id1,
+      name: name1,
+      time: time1
     };
     obj.push(campagainInfo);
     this.setState({createdCampagin:false});
@@ -96,11 +97,11 @@ class MainApp extends React.Component{
       let id = character.id;
       let time = character.time;
       return( <ul key = {i}>
-        <div style={{display:'inline-block'}}>
-        <span>
+        <div className='campagainInfo' style={{display:'inline-block'}}>
+        <span className='cmapaginChild'>
         <li onClick = {this.listElementClicked.bind(this, keyData, id)}>{i+1} { character.name }</li>
         </span>
-        <span>
+        <span className='campagainActions'>
         {this.state.campaginPause?
           <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={pause} alt='comment'  onClick={this.pauseHandler.bind(this, id)} />
           : <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={play} alt='comment' onClick={this.playHandler.bind(this, id)} />
@@ -110,7 +111,7 @@ class MainApp extends React.Component{
         <img style={{width:'30px',height:'30px', padding:'0 10px 0 0'}} src={delete_icon} alt='comment' onClick={this.deleteHandler.bind(this, id)} />
         </span>
         </div>
-        <li>created on {time}</li>
+        <li className='createdTime'>created on {time}</li>
       </ul>
     );
     });
