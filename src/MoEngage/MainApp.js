@@ -96,23 +96,33 @@ class MainApp extends React.Component{
       let keyData = character.name;
       let id = character.id;
       let time = character.time;
-      return( <ul key = {i}>
-        <div className='campagainInfo' style={{display:'inline-block'}}>
-        <span className='cmapaginChild'>
-        <li onClick = {this.listElementClicked.bind(this, keyData, id)}>{i+1} { character.name }</li>
-        </span>
-        <span className='campagainActions'>
-        {this.state.campaginPause?
-          <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={pause} alt='comment'  onClick={this.pauseHandler.bind(this, id)} />
-          : <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={play} alt='comment' onClick={this.playHandler.bind(this, id)} />
-        }
-        <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={comment} alt='comment' onClick={this.commentHandler.bind(this, id)} />
-        <img style={{width:'30px',height:'30px',padding:'0 15px 0 0'}} src={edit} alt='comment' />
-        <img style={{width:'30px',height:'30px', padding:'0 10px 0 0'}} src={delete_icon} alt='comment' onClick={this.deleteHandler.bind(this, id)} />
-        </span>
-        </div>
-        <li className='createdTime'>created on {time}</li>
-      </ul>
+      return(
+        <li key={i}>
+          <div className='wrapper' style={{display:'inline-flex'}}>
+            <div className='campaginCounter'>{i+1}</div>
+            <div>
+              <p>{ character.name }</p>
+              <p>created on {time}</p>
+            </div>
+          </div>
+          <div className='campaginActions'>
+          <span>
+          {this.state.campaginPause?
+            <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={pause} alt='comment'  onClick={this.pauseHandler.bind(this, id)} />
+            : <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={play} alt='comment' onClick={this.playHandler.bind(this, id)} />
+          }
+          </span>
+          <span>
+          <img style={{width:'30px',height:'30px', padding:'0 15px 0 0'}} src={comment} alt='comment' onClick={this.commentHandler.bind(this, id)} />
+          </span>
+          <span>
+          <img style={{width:'30px',height:'30px',padding:'0 15px 0 0'}} src={edit} alt='comment' />
+          </span>
+          <span>
+          <img style={{width:'30px',height:'30px', padding:'0 10px 0 0'}} src={delete_icon} alt='comment' onClick={this.deleteHandler.bind(this, id)} />
+          </span>
+          </div>
+        </li>
     );
     });
     }
@@ -120,7 +130,7 @@ class MainApp extends React.Component{
       <div className='mainApp'>
       <Header />
       <div className='campaginList'>Campagin List <span><button className='createcamgainBtn' onClick={this.createCampagin}>+ Create New</button></span></div>
-      <div>{peopleList}</div>
+      <div className='campagainInfo'><ul>{peopleList}</ul></div>
           {/*creating popup to show form for creating a campaign */}
           <Popup
               open={this.state.createdCampagin}

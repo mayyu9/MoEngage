@@ -1,9 +1,19 @@
 
+ul {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+p{
+  padding:0px;
+  margin:0px;
+
+}
 /* Style the list items */
 ul li {
   cursor: pointer;
   position: relative;
-  padding: 12px 8px 12px 40px;
+  /* padding: 12px 8px 12px 40px; */
   list-style-type: none;
   background: #eee;
   font-size: 18px;
@@ -14,7 +24,13 @@ ul li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-bottom-style: ridge;
+  border-top-style: ridge;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 /* Modal css */
 .modal {
@@ -79,4 +95,13 @@ ul li {
   color: white;
   margin: auto;
   display: inline-block;
+}
+
+.campaginCounter{
+  display: inline-flex;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+.campaginActions {
+  margin-right: 10%;
 }
